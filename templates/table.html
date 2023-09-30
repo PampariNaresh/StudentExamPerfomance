@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DataFrame Rows</title>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>gender</th>
+                <th>race_ethnicity</th>
+                <th>parental_level_of_education</th>
+                <th>lunch</th>
+                <th>test_preparation_course</th>
+                <th>math_score</th>
+                <th>reading_score</th>
+                <th>writing_score</th>
+            </tr>
+        </thead>
+        {% for index, row in rows %}
+        <tbody>
+            <tr>
+                <td>{{ row['gender'] }}</td>
+                <td>{{ row['race_ethnicity'] }}</td>
+                <td>{{ row['parental_level_of_education'] }}</td>
+                <td>{{ row['lunch'] }}</td>
+                <td>{{ row['test_preparation_course'] }}</td>
+                <td>{{ row['math_score'] }}</td>
+                <td>{{ row['reading_score'] }}</td>
+                <td>{{ row['writing_score'] }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
