@@ -149,20 +149,20 @@ def analysis():
    
     # df=pd.read_csv(r'C:\Users\Naresh\Desktop\StudentExamPerformance\notebook\data\stud.csv')
     Group_data2=df.groupby('race_ethnicity')
-    fig1,ax=plt.subplots(1,3,figsize=(20,8))
-    sns.barplot(x=Group_data2['math_score'].mean().index,y=Group_data2['math_score'].mean().values,palette = 'mako',ax=ax[0])
+    fig1,ax=plt.subplots(1,3,figsize=(20,8)) #palette = 'mako'
+    sns.barplot(x=Group_data2['math_score'].mean().index,y=Group_data2['math_score'].mean().values,ax=ax[0])
     ax[0].set_title('Math score',color='#005ce6',size=20)
 
     for container in ax[0].containers:
         ax[0].bar_label(container,color='black',size=15)
-
-    sns.barplot(x=Group_data2['reading_score'].mean().index,y=Group_data2['reading_score'].mean().values,palette = 'flare',ax=ax[1])
+     #palette = 'flare'
+    sns.barplot(x=Group_data2['reading_score'].mean().index,y=Group_data2['reading_score'].mean().values,ax=ax[1])
     ax[1].set_title('Reading score',color='#005ce6',size=20)
 
     for container in ax[1].containers:
         ax[1].bar_label(container,color='black',size=15)
-
-    sns.barplot(x=Group_data2['writing_score'].mean().index,y=Group_data2['writing_score'].mean().values,palette = 'coolwarm',ax=ax[2])
+    #palette = 'coolwarm'
+    sns.barplot(x=Group_data2['writing_score'].mean().index,y=Group_data2['writing_score'].mean().values,ax=ax[2])
     ax[2].set_title('Writing score',color='#005ce6',size=20)
 
     for container in ax[2].containers:
