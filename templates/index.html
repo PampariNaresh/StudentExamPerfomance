@@ -4,13 +4,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <title>Student Exam Performance Analysis</title>
+    <style>
+        /* Reset some default browser styles */
+        body,
+        h1,
+        p,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        nav {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+            width: 100%;
+            text-align: center;
+            animation: fade-in 0.5s ease;
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #4285f4;
+        }
+
+        main {
+            padding: 60px 20px;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+            animation: scale-up 0.5s ease;
+        }
+
+        @keyframes scale-up {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        p {
+            font-size: 18px;
+            color: #666;
+            animation: fade-in 0.5s ease;
+        }
+
+        footer {
+            background-color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            border-top: 1px solid #ddd;
+            width: 100%;
+            animation: slide-up 0.5s ease;
+        }
+
+        @keyframes slide-up {
+            0% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Adjust styles as needed */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+        }
+
+        /* ... (rest of your styles) */
+
+        nav {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+            width: 100%;
+            text-align: center;
+            animation: fade-in 0.5s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* ... (rest of your styles) */
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+            animation: scale-up 0.5s ease;
+        }
+
+        /* ... (rest of your styles) */
+
+        footer {
+            background-color: #414141;
+            /* Blue */
+            text-align: center;
+            padding: 10px 0;
+            border-top: 1px solid #ddd;
+            width: 100%;
+            animation: slide-up 0.5s ease;
+            color: #fff;
+            /* White text on blue background */
+        }
+
+        nav {
+            background-color: #414141;
+            /* Blue */
+            border-bottom: 1px solid #ddd;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0 20px;
+            position: relative;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            /* White text */
+            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav a::before {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #fff;
+            /* White line */
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: white;
+            /* Red on hover */
+        }
+
+        nav li:hover a::before {
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 48px;
+            /* Increased font size */
+            color: black;
+            /* Red color */
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            /* Add text shadow */
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Student Exam Performance</h1>
-    <a href="/predict">Predict</a>
 
+
+    <nav>
+        <ul>
+            <li><a href="/abstract">Abstract</a></li>
+            <li><a href="/upload">Upload</a></li>
+            <li><a href="/predict">Predict</a></li>
+            <!-- <li><a href="/analysis">Analysis</a></li> -->
+
+        </ul>
+    </nav>
+    <main>
+        <h1>Student Exam Performance Analysis</h1>
+        <p>Welcome to Student Performance Analysis Platform.</p>
+
+        <img src="{{url_for('static', filename='/Image/coverpic1.jpg')}}" width="600">
+    </main>
+    <footer>
+        <p>&copy; Malla Reddy College Of Engineering and Technology</p>
+    </footer>
 </body>
 
 </html>
